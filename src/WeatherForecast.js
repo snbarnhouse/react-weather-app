@@ -1,13 +1,27 @@
-import React from "react";
-import WeatherIcon from "./WeatherIcon";
+import React, { useState } from "react";
+import WeatherForecastDay from "./WeatherForecastDay";
 import "./WeatherForecast.css";
 import axios from "axios";
 
-export default function WeatherForecast() {
-    function handleResponse(response) {
+export default function WeatherForecast(props) {
+  let [loaded, setLoaded] = useState(false);
+  let [forecast, setForcast] = useState(null);
+  function handleResponse(response) {
+    setForcast(response.data.daily);
+    setLoaded(true);
+  }
+  if (loaded) {
 
-    }
-
+    return (
+      <div className="WeatherForecast">
+        <div className="row">
+          <div className="col">
+              <WeatherForecastDay data= {forecast[0]}/>
+          </div>
+        </div>
+      </div>
+    );
+  } else {
     let apiKey = "1743d71cea491649f0bd96f06af46d71";
     let longitude = props.coordinates.lon;
     let latitude = props.coordinates.lat;
@@ -15,16 +29,6 @@ export default function WeatherForecast() {
 
     axios.get(apiUrl).then(handleResponse);
 
-    return (
-        <div className= "WeatherForecast">
-            <div className="row">
-                <div className="col">
-                    <div className="WeatherForecast-day">Tues</div>
-                <WeatherIcon code="01d" size={36} />
-                <div className="WeatherForecast-temperatures">
-                    <span className="WeatherForecast-temperature-max">70° </span>|<span className="WeatherForecast-temperature-min"> 30°</span></div>
-                </div>
-            </div>
-        </div>
-    )
+    return null;
+  }
 }
