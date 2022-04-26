@@ -2,7 +2,7 @@
 
 ## Description/Features
 
-A weather app that provides the user with the current temperature, location, and a 5 day forecast for the city searched.
+A weather app that provides the user with the current temperature, location, and a 5 day forecast for the city searched. It also allows the user to display the current temperature in degrees Fahrenheit or Celsius.
 
 ## Tech Stack
 
