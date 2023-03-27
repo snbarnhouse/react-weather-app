@@ -13,6 +13,6 @@ This app was created using React, Bootstrap, the OpenWeather API, and the React 
 
 GitHub Repository: https://github.com/snbarnhouse/react-weather-app 
 
-Deployed: https://condescending-albattani-fcf956.netlify.app 
+Deployed: https://weather-app-2-reactjs.netlify.app/ 
 
 ![Weather App 2.0](/src/Screenshot-2.0.png?raw=true "Weather App 2.0")
